@@ -1,8 +1,8 @@
 import { PrismaClient } from "@prisma/client";
 
-// Configuración simple para evitar prepared statements
+// Configuración de logs para depuración
 const prisma = new PrismaClient({
-  log: ["error"],
+  log: ["query", "info", "warn", "error"], // Habilitar logs detallados
   datasources: {
     db: {
       url: process.env.DATABASE_URL
